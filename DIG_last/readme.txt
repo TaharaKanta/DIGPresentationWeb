@@ -20,7 +20,13 @@ stock.js 動きを与える
             javascriptがcsvファイルを読み込む
 ・ティッカーコードおよび比率の入力フォーム
     htmlのform
+        ティッカーコード
+        比率
+        サブミット
     formからjavascriptに送信
+        submitクリックのイベント発生
+    datalistでティッカーコードの候補を作成
+        javascriptでcsvファイル全体から作る
 ・グラフ表示
     方法
         google chartsの折れ線
