@@ -1,0 +1,2 @@
+let symbol;
+let csvdata=[];

@@ -2,11 +2,17 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
-let num = "7203"
-let csvdata = getCSV("csv/"+ num +" Historical Data.csv");
-csvdata = editCSVToStockData(csvdata);
+// let symbol;
+// let csvdata=[];
+// $("#submit-button").click(function(){
+//     symbol = $(".symbol").eq(0).val();
+//     csvdata = getCSV(symbol);
+//     csvdata = editCSVToStockData(csvdata);
+//     console.log(csvdata)
+//     drawChart(csvdata)
+// });
 
-function drawChart() {
+function drawChart(csvdata) {
     let data = google.visualization.arrayToDataTable(csvdata);
     
     let options = {

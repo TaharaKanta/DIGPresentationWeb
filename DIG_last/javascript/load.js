@@ -1,6 +1,6 @@
-function getCSV(CSVUrl) {
+function getCSV(symbol) {
     let srt = new XMLHttpRequest();
-    srt.open("GET", CSVUrl, false);
+    srt.open("GET", "csv/"+ symbol +" Historical Data.csv", false);
     srt.send();
     return csvArr(srt.responseText);
 }
