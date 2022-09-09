@@ -2,7 +2,8 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
-let csvdata = getCSV("csv/7203 Historical Data.csv");
+let num = "7203"
+let csvdata = getCSV("csv/"+ num +" Historical Data.csv");
 csvdata = editCSVToStockData(csvdata);
 
 function drawChart() {

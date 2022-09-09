@@ -1,30 +1,39 @@
 <html>
- <head>
-   <!--Load the AJAX API-->
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script
-  src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   
- </head>
 
- <body>
-  <form >
+<head>
+  <!--Google Charts-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
-    <input type="text" name="name_a" value="value_a" > <br>
-    <input type="text" name="name_b" value="value_b" > <br>
-    <input type="text" name="name_c" value="value_c" > <br>
+</head>
 
-    <input type="submit" value="送信" >
+<body>
+  <form action="" method="post" class="main-form">
+    <div class="form-group">
+      <div class="stocks-set">
+        <input type="text" name="stock1" value="" list="stocks-codes" placeholder="(例:7203)"> <br>
+        <input type="text" name="stock2" value="value_b"> <br>
+      </div>
+      <input type="text" name="name_a" value="value_a"> <br>
+      <input type="text" name="name_b" value="value_b"> <br>
+      <input type="text" name="name_c" value="value_c"> <br>
+      <input type="submit" value="送信">
+
+      <datalist id="stocks-codes">
+      </datalist>
+    </div>
 
   </form>
   <h3></h3>
-   <!--Div that will hold the pie chart-->
-   <div id="chart_div"></div>
-   <script type="text/javascript" src="javascript/load.js"></script>
-   <script type="text/javascript" src="javascript/editData.js"></script>
-   <script type="text/javascript" src="javascript/desplay.js"></script>
- </body>
+  <!-- Display Chart -->
+  <div id="chart_div"></div>
+  <!-- Load Scripts -->
+  <script type="text/javascript" src="javascript/makeStocksDatalist.js"></script>
+  <script type="text/javascript" src="javascript/load.js"></script>
+  <script type="text/javascript" src="javascript/editData.js"></script>
+  <script type="text/javascript" src="javascript/desplay.js"></script>
+</body>
+
 </html>
