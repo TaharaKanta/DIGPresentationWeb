@@ -12,22 +12,72 @@
 <body>
   <form action="" method="post" class="main-form">
     <div class="form-group">
-      <div class="stocks-set">
-        <input type="text" class="symbol" value="" list="stocks-codes" placeholder="(例:7203)"> <br>
-        <input type="text" class="symbol" value="" list="stocks-codes"> <br>
-        <input type="text" class="symbol" value="" list="stocks-codes"> <br>
+      <label for="start-year" class="control-label">開始年</label>
+      <div class="input-group">
+        <input type="text" id="start-year" class="start-year" value="2000">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="initial-asset" class="control-label">初期資金</label>
+      <div class="input-group">
+        <input type="text" id="initial-asset" class="initial-asset" value="1000000">
+        <span class="input-group-addon">円</span>
+      </div>
+    </div>
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
+      </div>
+      <div class="per-sum">
+        <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
       </div>
       <input type="button" value="グラフを表示" id="submit-button">
-
-      <datalist id="stocks-codes">
-      </datalist>
-    </div>
-
+    <datalist id="stocks-symbols">
+    </datalist>
   </form>
-  <h3></h3>
+  <div class="results" id="results">
+    <table class="results-table" display="none">
+      <thead>
+        <tr>
+          <th>初期資産</th>
+          <th>最終資産</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
   <!-- Display Chart -->
-  <div id="chart_div"></div>
+  <div id="chart-div"></div>
   <!-- Load Scripts -->
+  </div>
+
   <script type="text/javascript" src="javascript/globalVariable.js"></script>
   <script type="text/javascript" src="javascript/makeStocksDatalist.js"></script>
   <script type="text/javascript" src="javascript/load.js"></script>

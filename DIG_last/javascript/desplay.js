@@ -2,16 +2,6 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
-// let symbol;
-// let csvdata=[];
-// $("#submit-button").click(function(){
-//     symbol = $(".symbol").eq(0).val();
-//     csvdata = getCSV(symbol);
-//     csvdata = editCSVToStockData(csvdata);
-//     console.log(csvdata)
-//     drawChart(csvdata)
-// });
-
 function drawChart(csvdata) {
     let data = google.visualization.arrayToDataTable(csvdata);
     
@@ -21,6 +11,11 @@ function drawChart(csvdata) {
         vAxis: { minValue: 0 }
     };
 
-    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.AreaChart(document.getElementById('chart-div'));
     chart.draw(data, options);
+}
+
+function addResultTable(csvdata){
+    console.log($(".results-table").find("tbody tr th").eq(0).text(csvdata[1][1] + "円"));
+    console.log($(".results-table").find("tbody tr th").eq(1).text(csvdata[csvdata.length-1][1] + "円"));
 }

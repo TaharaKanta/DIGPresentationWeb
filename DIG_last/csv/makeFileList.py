@@ -21,6 +21,6 @@ f.writelines(linesBefore)
 for file in csvList:
     f.write(' $("<option>").attr({value:"')
     f.write(file)
-    f.write('"}).appendTo("#stocks-codes");\n')
+    f.write('"}).appendTo("#stocks-symbols");\n')
 f.writelines(linesAfter)
 f.close()

@@ -8,10 +8,9 @@ function getCSV(symbol) {
 function csvArr(dataArr) {
     let arr = [];
     let list = dataArr.split('\n');
-    //帰ってきているレスポンスを配列に格納する
+
     for (let i = 0; i < list.length; i++) {
         arr[i] = list[i].split('","');
     }
     return arr;
-    // htmlWrite(arr);//出力をtableに設定する
 }
