@@ -2,14 +2,42 @@
 
 * {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+}
+*:before, *after{
+    box-sizing: border-box;
 }
 
-body{
-    
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 80%;
+    background-color: #fff;
 }
 
-html{
+html {
     overflow-y: scroll;
+}
+
+div {
+    display: block;
+}
+
+.container-form:before,.container-form:after,.main-form .form-group:before,.main-form .form-group:after{
+    display: table;
+    content: "";
+}
+
+.container-form:after {
+    clear: both;
+}
+
+.container-form{
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+form{
+    display: block;
+    margin: 0;
 }

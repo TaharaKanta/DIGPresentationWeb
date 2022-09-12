@@ -6,9 +6,12 @@
   <title>ポートフォリオ分析</title>
   <meta name="description" content="ポートフォリオを指定すると長期グラフが表示されます" />
 
-  <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
 
   <!--Google Charts-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -19,54 +22,57 @@
 </head>
 
 <body>
-  <form action="" method="post" class="main-form">
-    <div class="form-group">
-      <label for="start-year" class="control-label">開始年</label>
-      <div class="input-group">
-        <input type="text" id="start-year" class="start-year" value="2000">
+  <div class="container-form">
+    <form action="" method="post" class="main-form">
+      <div class="form-group">
+        <label for="start-year" class="control-label">開始年</label>
+        <div class="input-group">
+          <input type="text" id="start-year" class="start-year" value="2000">
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="initial-asset" class="control-label">初期資金</label>
-      <div class="input-group">
-        <input type="text" id="initial-asset" class="initial-asset" value="1000000">
-        <span class="input-group-addon">円</span>
+      <div class="form-group">
+        <label for="initial-asset" class="control-label">初期資金</label>
+        <div class="input-group">
+          <input type="text" id="initial-asset" class="initial-asset" value="1000000">
+          <span class="input-group-addon">円</span>
+        </div>
       </div>
-    </div>
-    <div class="asset-row">
-      <div class="symbol-box">
-        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
       </div>
-      <div class="per-box">
-        <input type="text" class="per-value" value="">
-        <span class="per-text">%</span>
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
       </div>
-    </div>
-    <div class="asset-row">
-      <div class="symbol-box">
-        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+      <div class="asset-row">
+        <div class="symbol-box">
+          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+        </div>
+        <div class="per-box">
+          <input type="text" class="per-value" value="">
+          <span class="per-text">%</span>
+        </div>
       </div>
-      <div class="per-box">
-        <input type="text" class="per-value" value="">
-        <span class="per-text">%</span>
+      <div class="per-sum">
+        <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
       </div>
-    </div>
-    <div class="asset-row">
-      <div class="symbol-box">
-        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-      </div>
-      <div class="per-box">
-        <input type="text" class="per-value" value="">
-        <span class="per-text">%</span>
-      </div>
-    </div>
-    <div class="per-sum">
-      <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
-    </div>
-    <input type="button" value="グラフを表示" id="submit-button">
-    <datalist id="stocks-symbols">
-    </datalist>
-  </form>
+      <input type="button" value="グラフを表示" id="submit-button">
+      <datalist id="stocks-symbols">
+      </datalist>
+    </form>
+  </div>
+
   <div class="results" id="results" style="display:none">
     <table class="results-table">
       <thead>

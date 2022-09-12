@@ -9,7 +9,6 @@ function addNewCSVToStockData(csvArray) {
     return filterDataByStartYear(stockArray);
 }
 
-
 function addMoreStockData(nowArray, addArray) {
     const stockArray = [];
 
