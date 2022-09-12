@@ -1,7 +1,11 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="ja">
 
 <head>
   <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ポートフォリオ分析</title>
   <meta name="description" content="ポートフォリオを指定すると長期グラフが表示されます" />
@@ -19,80 +23,114 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
+  <!-- bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <body>
-  <div class="container-form">
+  <nav class="navbar bg-gradient bg-dark">
+    <div class="container-fluid col-sm-1">
+      <a class="navbar-brand text-center" href="#">ポートフォリオ分析</a>
+    </div>
+  </nav>
+  <div class="container-fluid main">
     <form action="" method="post" class="main-form">
-      <div class="form-group">
-        <label for="start-year" class="control-label">開始年</label>
-        <div class="input-group">
+      <div class="config-group row">
+        <label for="start-year" class="form-label col-sm-3">開始年</label>
+        <div class="col-sm-3">
           <input type="text" id="start-year" class="start-year" value="2000">
+          <span class="input-group-addon">年</span>
         </div>
       </div>
-      <div class="form-group">
-        <label for="initial-asset" class="control-label">初期資金</label>
-        <div class="input-group">
+      <div class="config-group row">
+        <label for="initial-asset" class="form-label col-sm-3">初期資金</label>
+        <div class="col-sm-3">
           <input type="text" id="initial-asset" class="initial-asset" value="1000000">
           <span class="input-group-addon">円</span>
         </div>
       </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+      <div class="asset-group row mt-3">
+        <div class="asset-row row">
+          <label class="form-label col-sm-2">銘柄(ティッカーコード)</label>
+          <div class="symbol-box col-sm-3">
+          </div>
+          <label class="col-sm-3">ポートフォリオ</label>
         </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
+        <div class="asset-row row row-index-1">
+          <label class="form-label col-sm-2">銘柄1</label>
+          <div class="symbol-box col-sm-3">
+            <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+          </div>
+          <div class="per-box col-sm-3">
+            <input type="text" class="per-value" value="">
+            <span class="per-text">%</span>
+          </div>
+        </div>
+        <div class="asset-row row row-index-2">
+          <label class="form-label col-sm-2">銘柄2</label>
+          <div class="symbol-box col-sm-3">
+            <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+          </div>
+          <div class="per-box col-sm-3">
+            <input type="text" class="per-value" value="">
+            <span class="per-text">%</span>
+          </div>
+        </div>
+        <div class="asset-row row row-index-3">
+          <label class="form-label col-sm-2">銘柄3</label>
+          <div class="symbol-box col-sm-3">
+            <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+          </div>
+          <div class="per-box col-sm-3">
+            <input type="text" class="per-value" value="">
+            <span class="per-text">%</span>
+          </div>
+        </div>
+        <div class="asset-row per-sum row my-4 row-index-last">
+          <label for="per-sum-text" class="form-label col-sm-2">Total</label>
+          <div class="symbol-box col-sm-3">
+          </div>
+          <div class="per-box col-sm-5">
+            <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
+            <span class="per-text">%(合計 100%にしてください)</span>
+          </div>
+          <!-- <label class="col">(合計 100%にしてください)</label> -->
         </div>
       </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-        </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
-        </div>
-      </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-        </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
-        </div>
-      </div>
-      <div class="per-sum">
-        <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
-      </div>
+
       <input type="button" value="グラフを表示" id="submit-button">
       <datalist id="stocks-symbols">
       </datalist>
     </form>
-  </div>
 
-  <div class="results" id="results" style="display:none">
-    <table class="results-table">
-      <thead>
-        <tr class="tr-titles">
-          <th>初期資産</th>
-          <th>最終資産</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="tr-results">
-          <th></th>
-          <th></th>
-        </tr>
-      </tbody>
-    </table>
-    <!-- Display Chart -->
-    <div id="chart-div"></div>
-    <!-- Load Scripts -->
-  </div>
 
+    <div class="results row" id="results" style="display:none">
+      <table class="results-table table">
+        <thead>
+          <tr class="tr-titles">
+            <th>初期資産</th>
+            <th>最終資産</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-results">
+            <th></th>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Display Chart -->
+      <div class="row" id="chart-div"></div>
+      <!-- Load Scripts -->
+    </div>
+  </div>
+  <!-- bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- javascript -->
   <script type="text/javascript" src="javascript/globalVariable.js"></script>
   <script type="text/javascript" src="javascript/makeStocksDatalist.js"></script>
   <script type="text/javascript" src="javascript/load.js"></script>

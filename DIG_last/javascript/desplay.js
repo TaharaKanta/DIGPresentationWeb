@@ -2,16 +2,19 @@
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
+
 function drawChart(csvdata) {
+    console.log(csvdata)
     let data = google.visualization.arrayToDataTable(csvdata);
     
     let options = {
-        title: 'Company Performance',
+        title: 'Portfolio Performance',
         hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
         vAxis: { minValue: 0 }
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('chart-div'));
+    console.log(chart);
     chart.draw(data, options);
 }
 

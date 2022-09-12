@@ -11,33 +11,36 @@
 
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-size: 80%;
+    font-size: 50%;
     background-color: #fff;
 }
 
-html {
-    overflow-y: scroll;
+.navbar-brand{
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
-div {
-    display: block;
+.main{
+    margin: 15px 0;
 }
 
-.container-form:before,.container-form:after,.main-form .form-group:before,.main-form .form-group:after{
+.asset-row{
+    padding: 3px 0;
+}
+.config-group::before,.config-group::after,.asset-row::before,.asset-row::after{
     display: table;
     content: "";
 }
 
-.container-form:after {
+.config-group::after,.asset-row::after{
     clear: both;
 }
 
-.container-form{
-    margin: 0 auto;
-    padding: 0 15px;
+.row-index-1, .row-index-3, .row-index-last{
+    background-color: #eee;
 }
 
-form{
-    display: block;
-    margin: 0;
+.col-sm-3{
+width: 25%;
 }

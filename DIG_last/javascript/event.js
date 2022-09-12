@@ -29,9 +29,10 @@ $("#submit-button").click(function () {
         
         csvdata = getSumAssetdata(csvdata);
         
+        $(".results").css("display", "");
         drawChart(csvdata);
         addResultTable(csvdata);
-        $(".results").css("display", "");
+        
     } else {
         $(".results").css("display", "none");
     }
