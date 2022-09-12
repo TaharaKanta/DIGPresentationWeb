@@ -16,6 +16,6 @@ function drawChart(csvdata) {
 }
 
 function addResultTable(csvdata){
-    console.log($(".results-table").find("tbody tr th").eq(0).text(csvdata[1][1] + "円"));
-    console.log($(".results-table").find("tbody tr th").eq(1).text(csvdata[csvdata.length-1][1] + "円"));
+    $(".results-table").find("tbody tr th").eq(0).text(csvdata[1][1] + "円");
+    $(".results-table").find("tbody tr th").eq(1).text(csvdata[csvdata.length-1][1] + "円");
 }

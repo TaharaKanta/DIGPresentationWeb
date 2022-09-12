@@ -1,6 +1,8 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!--Google Charts-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <!-- Jquery -->
@@ -24,58 +26,58 @@
         <span class="input-group-addon">円</span>
       </div>
     </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-        </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
-        </div>
+    <div class="asset-row">
+      <div class="symbol-box">
+        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
       </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-        </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
-        </div>
+      <div class="per-box">
+        <input type="text" class="per-value" value="">
+        <span class="per-text">%</span>
       </div>
-      <div class="asset-row">
-        <div class="symbol-box">
-          <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
-        </div>
-        <div class="per-box">
-          <input type="text" class="per-value" value="">
-          <span class="per-text">%</span>
-        </div>
+    </div>
+    <div class="asset-row">
+      <div class="symbol-box">
+        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
       </div>
-      <div class="per-sum">
-        <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
+      <div class="per-box">
+        <input type="text" class="per-value" value="">
+        <span class="per-text">%</span>
       </div>
-      <input type="button" value="グラフを表示" id="submit-button">
+    </div>
+    <div class="asset-row">
+      <div class="symbol-box">
+        <input type="text" class="symbol" value="" list="stocks-symbols" placeholder="(例:7203)">
+      </div>
+      <div class="per-box">
+        <input type="text" class="per-value" value="">
+        <span class="per-text">%</span>
+      </div>
+    </div>
+    <div class="per-sum">
+      <input type="text" class="per-sum-text" id="per-sum-text" value="" readonly>
+    </div>
+    <input type="button" value="グラフを表示" id="submit-button">
     <datalist id="stocks-symbols">
     </datalist>
   </form>
-  <div class="results" id="results">
-    <table class="results-table" display="none">
+  <div class="results" id="results" style="display:none">
+    <table class="results-table">
       <thead>
-        <tr>
+        <tr class="tr-titles">
           <th>初期資産</th>
           <th>最終資産</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="tr-results">
           <th></th>
           <th></th>
         </tr>
       </tbody>
     </table>
-  <!-- Display Chart -->
-  <div id="chart-div"></div>
-  <!-- Load Scripts -->
+    <!-- Display Chart -->
+    <div id="chart-div"></div>
+    <!-- Load Scripts -->
   </div>
 
   <script type="text/javascript" src="javascript/globalVariable.js"></script>

@@ -31,9 +31,9 @@ $("#submit-button").click(function () {
         
         drawChart(csvdata);
         addResultTable(csvdata);
-        $(".results-table").css("display", "");
+        $(".results").css("display", "");
     } else {
-        $(".results-table").css("display", "none");
+        $(".results").css("display", "none");
     }
 });
 
