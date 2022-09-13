@@ -4,7 +4,6 @@ google.charts.setOnLoadCallback(drawChart);
 
 
 function drawChart(csvdata) {
-    console.log(csvdata)
     let data = google.visualization.arrayToDataTable(csvdata);
     
     let options = {
@@ -14,7 +13,6 @@ function drawChart(csvdata) {
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('chart-div'));
-    console.log(chart);
     chart.draw(data, options);
 }
 

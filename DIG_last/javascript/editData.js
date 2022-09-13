@@ -16,7 +16,6 @@ function addMoreStockData(nowArray, addArray) {
 
     const nLength = nowArray.length;
     const aLength = addArray.length;
-    // console.log(addArray)
 
     for (let i = 1; i < aLength; i++) {
         addArray[i][1] = Number(addArray[i][1].replace(/,/g, ""));

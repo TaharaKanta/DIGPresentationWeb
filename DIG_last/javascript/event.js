@@ -3,8 +3,6 @@ $("#submit-button").click(function () {
         let isFirstData = true;
         $(".asset-row").each((i, element) => {
             symbol = $(".symbol").eq(i).val();
-            console.log("symbol")
-            console.log(symbol)
             if (symbol === "") {
                 return true;
             } else {
@@ -15,7 +13,6 @@ $("#submit-button").click(function () {
                     
                     isFirstData = false;
                 } else {
-                    console.log(symbol)
                     csvdata = addMoreStockData(csvdata, getCSV(symbol))
                 }
                 return true;
